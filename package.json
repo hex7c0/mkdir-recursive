@@ -35,8 +35,8 @@
   },
   "scripts": {
     "prepublish": "npm prune",
-    "test": "mocha --bail --check-leaks *.js",
-    "test-cov": "cd test;istanbul cover ../node_modules/mocha/bin/_mocha --report lcovonly -- *.js"
+    "test": "cd test. mocha --bail --check-leaks *.js",
+    "test-cov": "cd test; istanbul cover ../node_modules/mocha/bin/_mocha --report lcovonly -- *.js"
   },
   "license": "GPLv3"
 }
