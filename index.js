@@ -12,9 +12,74 @@
 /*
  * initialize module
  */
-// import
 var fs = require('fs');
 var path = require('path');
+
+/*
+ * exports
+ */
+/**
+ * make main. Check README.md
+ * 
+ * @exports mkdir
+ * @function mkdir
+ * @param {String} root - pathname
+ * @param {Number} mode - directories mode, see Node documentation
+ * @param {Function} callback - next callback
+ */
+function mkdir(root, mode, callback) {
+
+  if (typeof mode === 'function') {
+    var callback = mode;
+    var mode = null;
+  }
+  if (typeof root !== 'string') {
+    throw new Error('missing root');
+  } else if (typeof callback !== 'function') {
+    throw new Error('missing callback');
+  }
+
+  var chunks = root.split(path.sep); // split in chunks
+  var chunk;
+  if (path.isAbsolute(root) === true) {
+    chunk = '/'; // build from absolute path
+  } else {
+    chunk = path.resolve(); // build with relative path
+  }
+
+  return mkdirRecursive(chunk, chunks, mode, callback);
+}
+module.exports.mkdir = mkdir;
+
+/**
+ * remove main. Check README.md
+ * 
+ * @exports rmdir
+ * @function rmdir
+ * @param {String} root - pathname
+ * @param {Function} callback - next callback
+ */
+function rmdir(root, callback) {
+
+  if (typeof root !== 'string') {
+    throw new Error('missing root');
+  } else if (typeof callback !== 'function') {
+    throw new Error('missing callback');
+  }
+
+  var chunks = root.split(path.sep); // split in chunks
+  var chunk = path.resolve(root); // build absolute path
+  // remove "/" from head and tail
+  if (chunks[0] === '') {
+    chunks.shift();
+  }
+  if (chunks[chunks.length - 1] === '') {
+    chunks.pop();
+  }
+
+  return rmdirRecursive(chunk, chunks, callback);
+}
+module.exports.rmdir = rmdir;
 
 /*
  * functions
@@ -52,38 +117,6 @@ function mkdirRecursive(root, chunks, mode, callback) {
 }
 
 /**
- * make main. Check README.md
- * 
- * @exports rmdirRecursive
- * @function rmdirRecursive
- * @param {String} root - pathname
- * @param {Number} mode - directories mode, see Node documentation
- * @param {Function} callback - next callback
- */
-
-function mkdir(root, mode, callback) {
-
-  if (typeof mode === 'function') {
-    var callback = mode;
-    var mode = null;
-  }
-  if (!root || !callback) {
-    throw new Error('missing root or callback');
-  }
-
-  var chunks = root.split(path.sep); // split in chunks
-  var chunk;
-  if (path.isAbsolute(root) === true) {
-    chunk = '/'; // build from absolute path
-  } else {
-    chunk = path.resolve(); // build with relative path
-  }
-
-  return mkdirRecursive(chunk, chunks, mode, callback);
-}
-module.exports.mkdir = mkdir;
-
-/**
  * remove directory recursively
  * 
  * @function rmdirRecursive
@@ -113,31 +146,3 @@ function rmdirRecursive(root, chunks, callback) {
     });
   });
 }
-
-/**
- * remove main. Check README.md
- * 
- * @exports rmdirRecursive
- * @function rmdirRecursive
- * @param {String} root - pathname
- * @param {Function} callback - next callback
- */
-function rmdir(root, callback) {
-
-  if (!root || !callback) {
-    throw new Error('missing root or callback');
-  }
-
-  var chunks = root.split(path.sep); // split in chunks
-  var chunk = path.resolve(root); // build absolute path
-  // remove "/" from head and tail
-  if (chunks[0] === '') {
-    chunks.shift();
-  }
-  if (chunks[chunks.length - 1] === '') {
-    chunks.pop();
-  }
-
-  return rmdirRecursive(chunk, chunks, callback);
-}
-module.exports.rmdir = rmdir;
