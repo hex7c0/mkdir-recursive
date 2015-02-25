@@ -16,10 +16,10 @@ var fx = require('..');
 var fs = require('fs');
 var assert = require('assert');
 
-var PATH_00 = 'ciao/come/stai/te';
-var PATH_01 = 'hello/how/are/you/';
-var PATH_10 = '/ciao/come/stai/te';
-var PATH_11 = '/hello/how/are/you/';
+var PATH_00 = 'ciao/come/stai/te'.replace(/\//g, sep);
+var PATH_01 = 'hello/how/are/you/'.replace(/\//g, sep);
+var PATH_10 = '/ciao/come/stai/te'.replace(/\//g, sep);
+var PATH_11 = '/hello/how/are/you/'.replace(/\//g, sep);
 
 /*
  * test module
