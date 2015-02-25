@@ -1,5 +1,5 @@
 {
-  "version": "0.0.0",
+  "version": "0.0.1",
   "name": "mkdir-recursive",
   "description": "make/remove (synchronous) directories recursively",
   "keywords": [
@@ -36,7 +36,7 @@
   "scripts": {
     "prepublish": "npm prune",
     "test": "mocha --bail --check-leaks",
-    "test-cov": "cd test;istanbul cover ../node_modules/mocha/bin/_mocha --report lcovonly -- *.js"
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly"
   },
   "license": "GPLv3"
 }
