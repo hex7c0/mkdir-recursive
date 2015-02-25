@@ -10,4 +10,5 @@ build: off
 test_script:
   - node --version
   - npm --version
+  - cd test
   - npm test
