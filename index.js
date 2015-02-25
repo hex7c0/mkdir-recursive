@@ -52,6 +52,33 @@ function mkdir(root, mode, callback) {
 module.exports.mkdir = mkdir;
 
 /**
+ * makeSync main. Check README.md
+ * 
+ * @exports mkdirSync
+ * @function mkdirSync
+ * @param {String} root - pathname
+ * @param {Number} mode - directories mode, see Node documentation
+ * @return [{Object}]
+ */
+function mkdirSync(root, mode) {
+
+  if (typeof root !== 'string') {
+    throw new Error('missing root');
+  }
+
+  var chunks = root.split(path.sep); // split in chunks
+  var chunk;
+  if (path.isAbsolute(root) === true) {
+    chunk = '/'; // build from absolute path
+  } else {
+    chunk = path.resolve(); // build with relative path
+  }
+
+  return mkdirSyncRecursive(chunk, chunks, mode);
+}
+module.exports.mkdirSync = mkdirSync;
+
+/**
  * remove main. Check README.md
  * 
  * @exports rmdir
@@ -80,6 +107,34 @@ function rmdir(root, callback) {
   return rmdirRecursive(chunk, chunks, callback);
 }
 module.exports.rmdir = rmdir;
+
+/**
+ * removeSync main. Check README.md
+ * 
+ * @exports rmdirSync
+ * @function rmdirSync
+ * @param {String} root - pathname
+ * @return [{Object}]
+ */
+function rmdirSync(root) {
+
+  if (typeof root !== 'string') {
+    throw new Error('missing root');
+  }
+
+  var chunks = root.split(path.sep); // split in chunks
+  var chunk = path.resolve(root); // build absolute path
+  // remove "/" from head and tail
+  if (chunks[0] === '') {
+    chunks.shift();
+  }
+  if (chunks[chunks.length - 1] === '') {
+    chunks.pop();
+  }
+
+  return rmdirSyncRecursive(chunk, chunks);
+}
+module.exports.rmdirSync = rmdirSync;
 
 /*
  * functions
@@ -117,6 +172,30 @@ function mkdirRecursive(root, chunks, mode, callback) {
 }
 
 /**
+ * make directory recursively. Sync version
+ * 
+ * @function mkdirSyncRecursive
+ * @param {String} root - absolute root where append chunks
+ * @param {Array} chunks - directories chunks
+ * @param {Number} mode - directories mode, see Node documentation
+ * @return [{Object}]
+ */
+function mkdirSyncRecursive(root, chunks, mode) {
+
+  var chunk = chunks.shift();
+  if (!chunk) {
+    return;
+  }
+  var root = path.join(root, chunk);
+
+  if (fs.existsSync(root) === true) { // already done
+    return mkdirSyncRecursive(root, chunks, mode);
+  }
+  var err = fs.mkdirSync(root, mode);
+  return err ? err : mkdirSyncRecursive(root, chunks, mode); // let's magic
+}
+
+/**
  * remove directory recursively
  * 
  * @function rmdirRecursive
@@ -145,4 +224,27 @@ function rmdirRecursive(root, chunks, callback) {
       return rmdirRecursive(pathname, chunks, callback); // let's magic
     });
   });
+}
+
+/**
+ * remove directory recursively. Sync version
+ * 
+ * @function rmdirRecursive
+ * @param {String} root - absolute root where take chunks
+ * @param {Array} chunks - directories chunks
+ * @return [{Object}]
+ */
+function rmdirSyncRecursive(root, chunks) {
+
+  var chunk = chunks.pop();
+  if (!chunk) {
+    return;
+  }
+  var pathname = path.join(root, '..'); // backtrack
+
+  if (fs.existsSync(root) === false) { // already done
+    return rmdirSyncRecursive(root, chunks);
+  }
+  var err = fs.rmdirSync(root);
+  return err ? err : rmdirSyncRecursive(pathname, chunks); // let's magic
 }
