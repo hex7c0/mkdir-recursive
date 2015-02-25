@@ -1,0 +1,39 @@
+{
+  "version": "0.0.0",
+  "name": "mkdir-recursive",
+  "description": "make/remove directories recursively",
+  "keywords": [
+    "mkdir",
+    "rmdir",
+    "recursive"
+  ],
+  "preferGlobal": false,
+  "homepage": "http://supergiovane.tk/#/mkdir-recursive",
+  "author": {
+    "name": "hex7c0",
+    "email": "hex7c0@gmail.com",
+    "url": "http://hex7c0.tk/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hex7c0/mkdir-recursive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hex7c0/mkdir-recursive/issues",
+    "email": "hex7c0@gmail.com"
+  },
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~2.1"
+  },
+  "engines": {
+    "node": ">=0.10"
+  },
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "mocha --bail --check-leaks"
+  },
+  "license": "GPLv3"
+}
