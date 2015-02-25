@@ -32,31 +32,23 @@ fx.mkdir('foo/bar/1', function(err) {
 });
 ```
 
-### mkdir(path, [mode], callback)
-
-#### [Node doc](http://nodejs.org/api/fs.html#fs_fs_mkdir_path_mode_callback)
+### mkdir(path, [mode], callback) [Node](http://nodejs.org/api/fs.html#fs_fs_mkdir_path_mode_callback)
 
  - `path` - **String** Dir pathname *(default "required")*
  - `[mode]`- **Number** Scrivi *(default "0777")*
  - `callback` - **Function** Next callback when task is complete *(default "required")*
 
-### mkdirSync(path, [mode])
-
-#### [Node doc](http://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_mode)
+### mkdirSync(path, [mode]) [Node](http://nodejs.org/api/fs.html#fs_fs_mkdirsync_path_mode)
 
  - `path` - **String** Dir pathname *(default "required")*
  - `[mode]`- **Number** Scrivi *(default "0777")*
 
-### rmdir(path, callback)
-
-#### [Node doc](http://nodejs.org/api/fs.html#fs_fs_rmdir_path_callback)
+### rmdir(path, callback) [Node](http://nodejs.org/api/fs.html#fs_fs_rmdir_path_callback)
 
  - `path` - **String** Dir pathname *(default "required")*
  - `callback` - **Function** Next callback when task is complete *(default "required")*
 
-### rmdirSync(path)
-
-#### [Node doc](http://nodejs.org/api/fs.html#fs_fs_rmdirsync_path)
+### rmdirSync(path) [Node](http://nodejs.org/api/fs.html#fs_fs_rmdirsync_path)
 
  - `path` - **String** Dir pathname *(default "required")*
 
