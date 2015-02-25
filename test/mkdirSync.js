@@ -14,6 +14,7 @@
 // import
 var fx = require('..');
 var fs = require('fs');
+var sep = require('path').sep;
 var assert = require('assert');
 
 var PATH_00 = 'ciao/come/stai/te'.replace(/\//g, sep);
