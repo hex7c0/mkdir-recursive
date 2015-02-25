@@ -1,6 +1,6 @@
 'use strict';
 /**
- * @file mkdir test
+ * @file mkdirSync test
  * @module mkdir-recursive
  * @subpackage test
  * @version 0.0.0
@@ -24,7 +24,7 @@ var PATH_11 = '/hello/how/are/you/';
 /*
  * test module
  */
-describe('mkdir', function() {
+describe('mkdirSync', function() {
 
   describe('before', function() {
 
@@ -54,19 +54,23 @@ describe('mkdir', function() {
 
     it('should make PATH_00 dirs', function(done) {
 
-      fx.mkdir(PATH_00, done);
+      fx.mkdirSync(PATH_00);
+      done();
     });
     it('should make PATH_01 dirs', function(done) {
 
-      fx.mkdir(PATH_01, done);
+      fx.mkdirSync(PATH_01);
+      done();
     });
     // it('should make PATH_10 dirs', function(done) {
     //
-    // fx.mkdir(PATH_10, done);
+    // fx.mkdirSync(PATH_10);
+    // done();
     // });
     // it('should make PATH_11 dirs', function(done) {
     //
-    // fx.mkdir(PATH_11, done);
+    // fx.mkdirSync(PATH_11);
+    // done();
     // });
   });
 
@@ -98,19 +102,23 @@ describe('mkdir', function() {
 
     it('shouldn\'t make PATH_00 dirs becasue already exist', function(done) {
 
-      fx.mkdir(PATH_00, done);
+      fx.mkdirSync(PATH_00);
+      done();
     });
     it('shouldn\'t make PATH_01 dirs becasue already exist', function(done) {
 
-      fx.mkdir(PATH_01, done);
+      fx.mkdirSync(PATH_01);
+      done();
     });
     // it('shouldn\'t make PATH_10 dirs becasue already exist', function(done) {
     //
-    // fx.mkdir(PATH_10, done);
+    // fx.mkdirSync(PATH_10);
+    // done();
     // });
     // it('shouldn\'t make PATH_11 dirs becasue already exist', function(done) {
     //
-    // fx.mkdir(PATH_11, done);
+    // fx.mkdirSync(PATH_11);
+    // done();
     // });
   });
 
@@ -139,25 +147,27 @@ describe('mkdir', function() {
   });
 });
 
-describe('rmdir', function() {
+describe('rmdirSync', function() {
 
   describe('1° run', function() {
 
     it('should remove PATH_00 dirs', function(done) {
 
-      fx.rmdir(PATH_00, done);
+      fx.rmdirSync(PATH_00);
+      done();
     });
     it('should remove PATH_01 dirs', function(done) {
 
-      fx.rmdir(PATH_01, done);
+      fx.rmdirSync(PATH_01);
+      done();
     });
     // it('should make PATH_10 dirs', function(done) {
     //
-    // fx.rmdir(PATH_10, done);
+    // fx.rmdirSync(PATH_10);done();
     // });
     // it('should make PATH_11 dirs', function(done) {
     //
-    // fx.rmdir(PATH_11, done);
+    // fx.rmdirSync(PATH_11);done();
     // });
   });
 
@@ -189,19 +199,21 @@ describe('rmdir', function() {
 
     it('should remove PATH_00 dirs', function(done) {
 
-      fx.rmdir(PATH_00, done);
+      fx.rmdirSync(PATH_00);
+      done();
     });
     it('should remove PATH_01 dirs', function(done) {
 
-      fx.rmdir(PATH_01, done);
+      fx.rmdirSync(PATH_01);
+      done();
     });
     // it('should make PATH_10 dirs', function(done) {
     //
-    // fx.rmdir(PATH_10, done);
+    // fx.rmdirSync(PATH_10);done();
     // });
     // it('should make PATH_11 dirs', function(done) {
     //
-    // fx.rmdir(PATH_11, done);
+    // fx.rmdirSync(PATH_11);done();
     // });
   });
 
