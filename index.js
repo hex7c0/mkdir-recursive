@@ -42,6 +42,7 @@ function mkdir(root, mode, callback) {
   var chunks = root.split(path.sep); // split in chunks
   var chunk;
   if (path.isAbsolute(root) === true) {
+    chunks.shift(); // remove "/"
     chunk = path.sep; // build from absolute path
   } else {
     chunk = path.resolve(); // build with relative path
@@ -69,6 +70,7 @@ function mkdirSync(root, mode) {
   var chunks = root.split(path.sep); // split in chunks
   var chunk;
   if (path.isAbsolute(root) === true) {
+    chunks.shift(); // remove "/"
     chunk = path.sep; // build from absolute path
   } else {
     chunk = path.resolve(); // build with relative path

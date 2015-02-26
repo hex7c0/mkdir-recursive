@@ -82,12 +82,12 @@ describe('mkdir', function() {
       assert.ok(fs.existsSync(PATH_01));
       done();
     });
-    it('shouldn\'t exist PATH_10 path', function(done) {
+    it('should exist PATH_10 path', function(done) {
 
       assert.ok(fs.existsSync(PATH_10));
       done();
     });
-    it('shouldn\'t exist PATH_11 path', function(done) {
+    it('should exist PATH_11 path', function(done) {
 
       assert.ok(fs.existsSync(PATH_11));
       done();
@@ -126,12 +126,12 @@ describe('mkdir', function() {
       assert.ok(fs.existsSync(PATH_01));
       done();
     });
-    it('shouldn\'t exist PATH_10 path', function(done) {
+    it('should exist PATH_10 path', function(done) {
 
       assert.ok(fs.existsSync(PATH_10));
       done();
     });
-    it('shouldn\'t exist PATH_11 path', function(done) {
+    it('should exist PATH_11 path', function(done) {
 
       assert.ok(fs.existsSync(PATH_11));
       done();
@@ -163,12 +163,12 @@ describe('rmdir', function() {
 
   describe('after 1° run', function() {
 
-    it('should exist PATH_00 path', function(done) {
+    it('shouldn\'t exist PATH_00 path', function(done) {
 
       assert.ok(!fs.existsSync(PATH_00));
       done();
     });
-    it('should exist PATH_01 path', function(done) {
+    it('shouldn\'t exist PATH_01 path', function(done) {
 
       assert.ok(!fs.existsSync(PATH_01));
       done();
@@ -207,12 +207,12 @@ describe('rmdir', function() {
 
   describe('after 2° run', function() {
 
-    it('should exist PATH_00 path', function(done) {
+    it('shouldn\'t exist PATH_00 path', function(done) {
 
       assert.ok(!fs.existsSync(PATH_00));
       done();
     });
-    it('should exist PATH_01 path', function(done) {
+    it('shouldn\'t exist PATH_01 path', function(done) {
 
       assert.ok(!fs.existsSync(PATH_01));
       done();
