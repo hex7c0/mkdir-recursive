@@ -62,16 +62,16 @@ describe('mkdirSync', function() {
       fx.mkdirSync(PATH_01);
       done();
     });
-    it('should make PATH_10 dirs', function(done) {
-
-      fx.mkdirSync(PATH_10);
-      done();
-    });
-    it('should make PATH_11 dirs', function(done) {
-
-      fx.mkdirSync(PATH_11);
-      done();
-    });
+    // it('should make PATH_10 dirs', function(done) {
+    //
+    // fx.mkdirSync(PATH_10);
+    // done();
+    // });
+    // it('should make PATH_11 dirs', function(done) {
+    //
+    // fx.mkdirSync(PATH_11);
+    // done();
+    // });
   });
 
   describe('after 1° run', function() {
@@ -110,16 +110,16 @@ describe('mkdirSync', function() {
       fx.mkdirSync(PATH_01);
       done();
     });
-    it('shouldn\'t make PATH_10 dirs becasue already exist', function(done) {
-
-      fx.mkdirSync(PATH_10);
-      done();
-    });
-    it('shouldn\'t make PATH_11 dirs becasue already exist', function(done) {
-
-      fx.mkdirSync(PATH_11);
-      done();
-    });
+    // it('shouldn\'t make PATH_10 dirs becasue already exist', function(done) {
+    //
+    // fx.mkdirSync(PATH_10);
+    // done();
+    // });
+    // it('shouldn\'t make PATH_11 dirs becasue already exist', function(done) {
+    //
+    // fx.mkdirSync(PATH_11);
+    // done();
+    // });
   });
 
   describe('after 2° run', function() {
