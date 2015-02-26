@@ -20,8 +20,8 @@ var PATH_00 = 'ciao/come/stai/te'.replace(/\//g, sep);
 var PATH_01 = 'hello/how/are/you/'.replace(/\//g, sep);
 var PATH_10 = '/home/travis/build/hex7c0/mkdir-recursive/ciao/come/stai/te'
 .replace(/\//g, sep);
-var PATH_11 = '/home/travis/build/hex7c0/mkdir-recursive/hello/how/are/you/'
-.replace(/\//g, sep);
+// var PATH_11 = '/home/travis/build/hex7c0/mkdir-recursive/hello/how/are/you/'
+// .replace(/\//g, sep);
 
 /*
  * test module
@@ -66,10 +66,10 @@ describe('mkdir', function() {
 
       fx.mkdir(PATH_10, done);
     });
-    it('should make PATH_11 dirs', function(done) {
-
-      fx.mkdir(PATH_11, done);
-    });
+    // it('should make PATH_11 dirs', function(done) {
+    //
+    // fx.mkdir(PATH_11, done);
+    // });
   });
 
   describe('after 1° run', function() {
@@ -89,11 +89,11 @@ describe('mkdir', function() {
       assert.ok(fs.existsSync(PATH_10));
       done();
     });
-    it('should exist PATH_11 path', function(done) {
-
-      assert.ok(fs.existsSync(PATH_11));
-      done();
-    });
+    // it('should exist PATH_11 path', function(done) {
+    //
+    // assert.ok(fs.existsSync(PATH_11));
+    // done();
+    // });
   });
 
   describe('2° run', function() {
@@ -106,10 +106,10 @@ describe('mkdir', function() {
 
       fx.mkdir(PATH_01, done);
     });
-    // it('shouldn\'t make PATH_10 dirs becasue already exist', function(done) {
-    //
-    // fx.mkdir(PATH_10, done);
-    // });
+    it('shouldn\'t make PATH_10 dirs becasue already exist', function(done) {
+
+      fx.mkdir(PATH_10, done);
+    });
     // it('shouldn\'t make PATH_11 dirs becasue already exist', function(done) {
     //
     // fx.mkdir(PATH_11, done);
@@ -128,11 +128,11 @@ describe('mkdir', function() {
       assert.ok(fs.existsSync(PATH_01));
       done();
     });
-    // it('should exist PATH_10 path', function(done) {
-    //
-    // assert.ok(fs.existsSync(PATH_10));
-    // done();
-    // });
+    it('should exist PATH_10 path', function(done) {
+
+      assert.ok(fs.existsSync(PATH_10));
+      done();
+    });
     // it('should exist PATH_11 path', function(done) {
     //
     // assert.ok(fs.existsSync(PATH_11));
@@ -153,14 +153,14 @@ describe('rmdir', function() {
 
       fx.rmdir(PATH_01, done);
     });
-    it('should make PATH_10 dirs', function(done) {
+    it('should remove PATH_10 dirs', function(done) {
 
       fx.rmdir(PATH_10, done);
     });
-    it('should make PATH_11 dirs', function(done) {
-
-      fx.rmdir(PATH_11, done);
-    });
+    // it('should remove PATH_11 dirs', function(done) {
+    //
+    // fx.rmdir(PATH_11, done);
+    // });
   });
 
   describe('after 1° run', function() {
@@ -180,11 +180,11 @@ describe('rmdir', function() {
       assert.ok(!fs.existsSync(PATH_10));
       done();
     });
-    it('shouldn\'t exist PATH_11 path', function(done) {
-
-      assert.ok(!fs.existsSync(PATH_11));
-      done();
-    });
+    // it('shouldn\'t exist PATH_11 path', function(done) {
+    //
+    // assert.ok(!fs.existsSync(PATH_11));
+    // done();
+    // });
   });
 
   describe('2° run', function() {
@@ -197,14 +197,14 @@ describe('rmdir', function() {
 
       fx.rmdir(PATH_01, done);
     });
-    it('should make PATH_10 dirs', function(done) {
+    it('should remove PATH_10 dirs', function(done) {
 
       fx.rmdir(PATH_10, done);
     });
-    it('should make PATH_11 dirs', function(done) {
-
-      fx.rmdir(PATH_11, done);
-    });
+    // it('should remove PATH_11 dirs', function(done) {
+    //
+    // fx.rmdir(PATH_11, done);
+    // });
   });
 
   describe('after 2° run', function() {
@@ -224,10 +224,10 @@ describe('rmdir', function() {
       assert.ok(!fs.existsSync(PATH_10));
       done();
     });
-    it('shouldn\'t exist PATH_11 path', function(done) {
-
-      assert.ok(!fs.existsSync(PATH_11));
-      done();
-    });
+    // it('shouldn\'t exist PATH_11 path', function(done) {
+    //
+    // assert.ok(!fs.existsSync(PATH_11));
+    // done();
+    // });
   });
 });
