@@ -18,8 +18,10 @@ var assert = require('assert');
 
 var PATH_00 = 'ciao/come/stai/te'.replace(/\//g, sep);
 var PATH_01 = 'hello/how/are/you/'.replace(/\//g, sep);
-var PATH_10 = '/ciao/come/stai/te'.replace(/\//g, sep);
-var PATH_11 = '/hello/how/are/you/'.replace(/\//g, sep);
+var PATH_10 = '/home/travis/build/hex7c0/mkdir-recursive/ciao/come/stai/te'
+.replace(/\//g, sep);
+var PATH_11 = '/home/travis/build/hex7c0/mkdir-recursive/hello/how/are/you/'
+.replace(/\//g, sep);
 
 /*
  * test module
@@ -60,14 +62,14 @@ describe('mkdir', function() {
 
       fx.mkdir(PATH_01, done);
     });
-    // it('should make PATH_10 dirs', function(done) {
-    //
-    // fx.mkdir(PATH_10, done);
-    // });
-    // it('should make PATH_11 dirs', function(done) {
-    //
-    // fx.mkdir(PATH_11, done);
-    // });
+    it('should make PATH_10 dirs', function(done) {
+
+      fx.mkdir(PATH_10, done);
+    });
+    it('should make PATH_11 dirs', function(done) {
+
+      fx.mkdir(PATH_11, done);
+    });
   });
 
   describe('after 1° run', function() {
@@ -82,16 +84,16 @@ describe('mkdir', function() {
       assert.ok(fs.existsSync(PATH_01));
       done();
     });
-    // it('should exist PATH_10 path', function(done) {
-    //
-    // assert.ok(fs.existsSync(PATH_10));
-    // done();
-    // });
-    // it('should exist PATH_11 path', function(done) {
-    //
-    // assert.ok(fs.existsSync(PATH_11));
-    // done();
-    // });
+    it('should exist PATH_10 path', function(done) {
+
+      assert.ok(fs.existsSync(PATH_10));
+      done();
+    });
+    it('should exist PATH_11 path', function(done) {
+
+      assert.ok(fs.existsSync(PATH_11));
+      done();
+    });
   });
 
   describe('2° run', function() {
