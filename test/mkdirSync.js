@@ -86,16 +86,16 @@ describe('mkdirSync', function() {
       assert.ok(fs.existsSync(PATH_01));
       done();
     });
-    it('should exist PATH_10 path', function(done) {
-
-      assert.ok(fs.existsSync(PATH_10));
-      done();
-    });
-    it('should exist PATH_11 path', function(done) {
-
-      assert.ok(fs.existsSync(PATH_11));
-      done();
-    });
+    // it('should exist PATH_10 path', function(done) {
+    //
+    // assert.ok(fs.existsSync(PATH_10));
+    // done();
+    // });
+    // it('should exist PATH_11 path', function(done) {
+    //
+    // assert.ok(fs.existsSync(PATH_11));
+    // done();
+    // });
   });
 
   describe('2° run', function() {
@@ -134,16 +134,16 @@ describe('mkdirSync', function() {
       assert.ok(fs.existsSync(PATH_01));
       done();
     });
-    it('should exist PATH_10 path', function(done) {
-
-      assert.ok(fs.existsSync(PATH_10));
-      done();
-    });
-    it('should exist PATH_11 path', function(done) {
-
-      assert.ok(fs.existsSync(PATH_11));
-      done();
-    });
+    // it('should exist PATH_10 path', function(done) {
+    //
+    // assert.ok(fs.existsSync(PATH_10));
+    // done();
+    // });
+    // it('should exist PATH_11 path', function(done) {
+    //
+    // assert.ok(fs.existsSync(PATH_11));
+    // done();
+    // });
   });
 });
 
