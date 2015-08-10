@@ -3,7 +3,7 @@
  * @file mkdir-recursive main
  * @module mkdir-recursive
  * @subpackage main
- * @version 0.0.0
+ * @version 0.1.0
  * @author hex7c0 <hex7c0@gmail.com>
  * @copyright hex7c0 2015
  * @license GPLv3
