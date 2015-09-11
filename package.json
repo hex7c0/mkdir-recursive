@@ -1,7 +1,7 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "mkdir-recursive",
-  "description": "make/remove (synchronous) directories recursively",
+  "description": "make/remove (asynchronous/synchronous) directories recursively",
   "keywords": [
     "mkdir",
     "rmdir",
