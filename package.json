@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "name": "mkdir-recursive",
   "description": "make/remove (asynchronous/synchronous) directories recursively",
   "keywords": [
@@ -8,7 +8,7 @@
     "recursive"
   ],
   "preferGlobal": false,
-  "homepage": "http://supergiovane.tk/#/mkdir-recursive",
+  "homepage": "https://github.com/hex7c0/mkdir-recursive",
   "author": {
     "name": "hex7c0",
     "email": "hex7c0@gmail.com",

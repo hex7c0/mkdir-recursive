@@ -1,4 +1,4 @@
-# [mkdir-recursive](http://supergiovane.tk/#/mkdir-recursive)
+# [mkdir-recursive](https://github.com/hex7c0/mkdir-recursive)
 
 [![NPM version](https://img.shields.io/npm/v/mkdir-recursive.svg)](https://www.npmjs.com/package/mkdir-recursive)
 [![Linux Status](https://img.shields.io/travis/hex7c0/mkdir-recursive.svg?label=linux)](https://travis-ci.org/hex7c0/mkdir-recursive)
