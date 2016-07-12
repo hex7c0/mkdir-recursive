@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "coveralls": "~2.11",
-    "mocha": "~2.3",
+    "mocha": "~2.5",
     "istanbul": "~0.4"
   },
   "engines": {
