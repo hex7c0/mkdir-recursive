@@ -24,6 +24,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "path": "~0.11.14"
   },
   "devDependencies": {
     "mocha": "~3.2",
