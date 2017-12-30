@@ -15,6 +15,7 @@ matrix:
     - env: "NVM_NODEJS_ORG_MIRROR=https://nodejs.org/download/nightly"
 os:
   - linux
+  - osx
 cache:
   directories:
     - node_modules
