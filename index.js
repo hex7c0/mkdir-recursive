@@ -167,10 +167,9 @@ function mkdirRecursive(root, chunks, mode, callback) {
       return mkdirRecursive(root, chunks, mode, callback);
     }
     return fs.mkdir(root, mode, function(err) {
-
-      if (err) {
-        return callback(err);
-      }
+      if (err && err.code !== 'EEXIST')
+          return callback(err);
+      
       return mkdirRecursive(root, chunks, mode, callback); // let's magic
     });
   });
